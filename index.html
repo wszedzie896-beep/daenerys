@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Дейнеріс Таргарієн — Історія, Дракони та Титули</title>
+    <meta name="description" content="Повна історія Дейнеріс Таргарієн українською мовою: від вигнання в Ессосі до Матері Драконів.">
+    <style>
+        :root {
+            --bg-color: #0b0a0a;
+            --card-bg: #161213;
+            --accent-red: #8b0000;
+            --fire-orange: #ff4500;
+            --gold: #d4af37;
+            --text-main: #e0e0e0;
+            --text-muted: #a0a0a0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Ефект вогняного фону */
+        .spark {
+            position: fixed;
+            background: var(--fire-orange);
+            border-radius: 50%;
+            pointer-events: none;
+            opacity: 0.6;
+            animation: float 4s infinite linear;
+            z-index: 1;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(100vh) scale(1); opacity: 0.8; }
+            100% { transform: translateY(-10vh) scale(0); opacity: 0; }
+        }
+
+        header {
+            text-align: center;
+            padding: 80px 20px 40px;
+            background: linear-gradient(180deg, rgba(139,0,0,0.3) 0%, rgba(11,10,10,1) 100%);
+            border-bottom: 2px solid var(--accent-red);
+            position: relative;
+            z-index: 2;
+        }
+
+        header h1 {
+            font-size: 2.8rem;
+            color: var(--gold);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            text-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+        }
+
+        header p {
+            color: var(--text-muted);
+            font-size: 1.2rem;
+            margin-top: 10px;
+            font-style: italic;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        section {
+            margin-bottom: 60px;
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        h2 {
+            color: var(--gold);
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--accent-red);
+            padding-bottom: 8px;
+        }
+
+        .titles-box {
+            background: rgba(139, 0, 0, 0.15);
+            border-left: 4px solid var(--gold);
+            padding: 20px;
+            margin-top: 15px;
+            border-radius: 0 8px 8px 0;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        .dragons-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .dragon-card {
+            background: #1f1a1b;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #332729;
+            transition: transform 0.3s ease;
+        }
+
+        .dragon-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--fire-orange);
+        }
+
+        .dragon-card h3 {
+            color: var(--fire-orange);
+            margin-bottom: 8px;
+        }
+
+        .timeline-item {
+            margin-bottom: 25px;
+            padding-left: 15px;
+            border-left: 2px solid var(--accent-red);
+        }
+
+        .timeline-item h3 {
+            color: var(--gold);
+            font-size: 1.2rem;
+        }
+
+        /* Вікторина */
+        .quiz-option {
+            display: block;
+            width: 100%;
+            padding: 12px 15px;
+            margin: 10px 0;
+            background: #251d1e;
+            color: #fff;
+            border: 1px solid var(--gold);
+            border-radius: 6px;
+            cursor: pointer;
+            text-align: left;
+            font-size: 1rem;
+            transition: background 0.2s;
+        }
+
+        .quiz-option:hover {
+            background: var(--accent-red);
+        }
+
+        #quiz-result {
+            margin-top: 15px;
+            font-weight: bold;
+            color: var(--fire-orange);
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: var(--text-muted);
+            border-top: 1px solid #222;
+            font-size: 0.9rem;
+            position: relative;
+            z-index: 2;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Дейнеріс Таргарієн</h1>
+        <p>Матір Драконів • Руйнівниця Кайданів • Королева Вестероса</p>
+    </header>
+
+    <div class="container">
+        
+        <!-- Блок з титулами -->
+        <section>
+            <h2>Офіційний Титуларій</h2>
+            <div class="titles-box">
+                «Дейнеріс Буренароджена з дому Таргарієнів, перша цього імені, від крові стародавньої Валірії, Неопалима, Королева Міерину, Королева Андалів, Ройнарів та Перших Людей, Володарка Семи Королівств, Захисниця Держави, Кхалісі Великого Трав'яного Моря, Руйнівниця Кайданів та Матір Драконів.»
+            </div>
+        </section>
+
+        <!-- Хронологія життя -->
+        <section>
+            <h2>Історія та Шлях до Влади</h2>
+            
+            <div class="timeline-item">
+                <h3>1. Дитинство у вигнанні</h3>
+                <p>Народилася під час нищівного шторму на Драконячому Камені (через що отримала прозвище Буренароджена). Разом із братом Візерісом переховувалася у Вільних Містах Ессоса від найманців Роберта Баратеона.</p>
+            </div>
+
+            <div class="timeline-item">
+                <h3>2. Кхалісі та перетворення</h3>
+                <p>Шлюб із кхалом Дрого змінив її від робкої дівчини до впевненої правительки. Після загибелі чоловіка Дейнеріс зійшла на погребальний костер і вийшла з вогню неушкодженою, виносивши трьох драконів.</p>
+            </div>
+
+            <div class="timeline-item">
+                <h3>3. Кампанія у Заливі Работорговців</h3>
+                <p>Звільнила тисячі рабів у містах Астапор, Юнкай та Міерин. Створила елітну армію Бездоганних та навчилася керувати державою в складних політичних умовах.</p>
+            </div>
+
+            <div class="timeline-item">
+                <h3>4. Похід на Вестерос</h3>
+                <p>Зібрання найбільшого флоту та армії, союз із Севером для битви проти Короля Ночі під Вінтерфеллом і фінальна боротьба за Залізний Трон.</p>
+            </div>
+        </section>
+
+        <!-- Дракони -->
+        <section>
+            <h2>Дракони Дейнеріс</h2>
+            <div class="dragons-grid">
+                <div class="dragon-card">
+                    <h3>Дрогон</h3>
+                    <p>Найбільший і найагресивніший дракон із чорно-червоною лускою. Названий на честь чоловіка Кхала Дрого. Верховий дракон Дейнеріс.</p>
+                </div>
+                <div class="dragon-card">
+                    <h3>Рейгаль</h3>
+                    <p>Дракон із зелено-бронзовим забарвленням, названий на честь старшого брата Рейгара Таргарієна.</p>
+                </div>
+                <div class="dragon-card">
+                    <h3>Візеріон</h3>
+                    <p>Дракон із кремово-золотим відтінком луски, названий на честь брата Візеріса.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Інтерактивна вікторина -->
+        <section>
+            <h2>Перевір свої знання</h2>
+            <p>Як називали Дейнеріс мешканці звільнених міст Ессоса?</p>
+            <button class="quiz-option" onclick="checkAnswer(false)">А) Валірійка</button>
+            <button class="quiz-option" onclick="checkAnswer(true)">Б) Міса (Мати)</button>
+            <button class="quiz-option" onclick="checkAnswer(false)">В) Королева Сходу</button>
+            <div id="quiz-result"></div>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>© Сайт створено для шанувальників історії дому Таргарієнів | Слава Україні!</p>
+    </footer>
+
+    <script>
+        // Перевірка відповіді у вікторині
+        function checkAnswer(isCorrect) {
+            const resultDiv = document.getElementById('quiz-result');
+            if (isCorrect) {
+                resultDiv.innerText = "Правильно! «Міса» означає «Мати» мовою ґіскарців.";
+                resultDiv.style.color = "#4CAF50";
+            } else {
+                resultDiv.innerText = "Неправильно, спробуй ще раз!";
+                resultDiv.style.color = "#ff4500";
+            }
+        }
+
+        // Генерація іскор вогню на фоні
+        function createSpark() {
+            const spark = document.createElement('div');
+            spark.classList.add('spark');
+            
+            const size = Math.random() * 4 + 2;
+            spark.style.width = size + 'px';
+            spark.style.height = size + 'px';
+            spark.style.left = Math.random() * 100 + 'vw';
+            spark.style.animationDuration = (Math.random() * 3 + 2) + 's';
+            
+            document.body.appendChild(spark);
+
+            setTimeout(() => {
+                spark.remove();
+            }, 5000);
+        }
+
+        setInterval(createSpark, 200);
+    </script>
+</body>
+</html>
